@@ -103,8 +103,6 @@ export function useDayBookings({ date, scriptUrl, cache, setCache, onToast }) {
 
   useEffect(() => {
     fetch();
-    const id = setInterval(fetch, POLL_INTERVAL_MS);
-    return () => clearInterval(id);
   }, [fetch]);
 
   return { bookings, setBookings, loading, refresh: fetch };
